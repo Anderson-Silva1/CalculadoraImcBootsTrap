@@ -1,0 +1,17 @@
+div.feita-a-mao {
+    display: flex;
+    flex-direction: column;
+}
+
+div.feita-a-mao button {
+    margin: 40px;
+}
+
+div.feita-a-mao p {
+    margin: 40px;
+    background-color: #000;
+    color: #fff;
+    text-align: justify;
+    border-radius: 10px;
+    padding: 10px;
+}
