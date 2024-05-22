@@ -1,3 +1,9 @@
+// Programa que recebe 4 valores:
+// 1. Nome
+// 2. Idade
+// 3. Peso
+// 4. Altura
+
 // Criação da função para pegar apenas os 2 primeiros números decimais de um número Float
 function formatFloat(num) {
     return parseFloat(num.toFixed(2));
@@ -7,6 +13,7 @@ function formatFloat(num) {
 const nome = document.getElementById("name");
 const age = document.getElementById("number");
 const resposta = document.getElementById("resultado");
+const respostaPesoIdeal = document.getElementById("resultado-peso-ideal")
 const weight = document.getElementById("peso");
 const height = document.getElementById("altura");
 const btn = document.getElementById("btn");
@@ -51,4 +58,21 @@ btn.addEventListener("click", function () {
             resposta.innerHTML =
                 "Informamos que não conseguimos cálcular o seu IMC, verifique se as medidas colocadas correspondem a números reais"
         }
+
+        pesoIdeal(height.value)
     });
+
+btn.addEventListener("click", function () {
+    const pesoAltura = parseFloat(height.value)
+
+    
+    if (pesoAltura >= 0.50 && pesoAltura <= 2.00) {
+        let pesoMin = (18.5 * Math.pow(pesoAltura, 2)).toFixed(2);
+        let pesoMax = (24.9 * Math.pow(pesoAltura, 2)).toFixed(2);
+        let pesoMedio = ((parseFloat(pesoMin) + parseFloat(pesoMax)) / 2).toFixed(2);
+        respostaPesoIdeal.style.color = 'rgb(0, 255, 0)';
+        return respostaPesoIdeal.innerHTML = `Segundo o IMC seu peso ídeal deve estar entre ${pesoMin} e ${pesoMax} Kg, com a média de ${pesoMedio} Kg`;
+    } else {
+        return respostaPesoIdeal.innerHTML = `Ímpossível de cálcular, sua altura precisa ser de 0.50 até 2 metros de altura`;
+    }
+});
