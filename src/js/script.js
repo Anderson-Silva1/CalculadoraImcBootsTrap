@@ -15,8 +15,7 @@ const age = document.getElementById("number");
 const resposta = document.getElementById("resultado");
 const respostaPesoIdeal = document.getElementById("resultado-peso-ideal")
 const weight = document.getElementById("peso");
-const heightcm = document.getElementById("altura");
-const height = heightcm / 100
+const height = document.getElementById("altura");
 const btn = document.getElementById("btn");
 
 // Criando um ouvidos na Variável btn com o evento "click"
@@ -59,8 +58,6 @@ btn.addEventListener("click", function () {
             resposta.innerHTML =
                 "Informamos que não conseguimos cálcular o seu IMC, verifique se as medidas colocadas correspondem a números reais"
         }
-
-        pesoIdeal(height.value)
     });
 
 btn.addEventListener("click", function () {
