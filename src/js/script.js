@@ -15,7 +15,8 @@ const age = document.getElementById("number");
 const resposta = document.getElementById("resultado");
 const respostaPesoIdeal = document.getElementById("resultado-peso-ideal")
 const weight = document.getElementById("peso");
-const height = document.getElementById("altura");
+const heightcm = document.getElementById("altura");
+const height = heightcm / 100
 const btn = document.getElementById("btn");
 
 // Criando um ouvidos na Variável btn com o evento "click"
